@@ -3,7 +3,7 @@ README
 Aplikacija za Predikciju Sledeće Rijeci
 
 1. Opis:
-   Ovaj Python skript implementira aplikaciju za predikciju sledeće reči (NWP) koristeći unapred obučen T5. Aplikacija korisnicima pruža sugestije za sledeću reijč na osnovu teksta koji korisnik unese. Koristi grafički korisnički interfejs (GUI) koji je izgrađen pomoću customtkinter modula.
+   Ova Python skripa implementira aplikaciju za predikciju sledeće reči (NWP) koristeći unapred obučen T5. Aplikacija korisnicima pruža sugestije za sledeću reijč na osnovu teksta koji korisnik unese. Koristi grafički korisnički interfejs (GUI) koji je izgrađen pomoću customtkinter modula.
 
 2. Zahtevi:
    - Python 3.x

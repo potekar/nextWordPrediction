@@ -1,8 +1,8 @@
+print("Loading...")
 import customtkinter
 from transformers import T5ForConditionalGeneration, T5Tokenizer
 
 model_name = "model_one"   #ucitavanje modela
-print("Loading...")
 tokenizer = T5Tokenizer.from_pretrained(model_name, legacy=False)       #ucitavanje tokenizera
 model = T5ForConditionalGeneration.from_pretrained(model_name)
 
@@ -57,29 +57,32 @@ pOne=customtkinter.StringVar()
 pTwo=customtkinter.StringVar()
 pThree=customtkinter.StringVar()
 
-#formiranje GUI elemenata
-frame=customtkinter.CTkFrame(master=root)
-frame.pack(pady=20,padx=60,fill='both',expand=True)
-
-label=customtkinter.CTkLabel(master=frame,text='Next Word Prediction',font=("Roboto",34))
-label.pack(pady=50)
-
-entry=customtkinter.CTkEntry(master=frame,placeholder_text="Start typing...",width=600,font=('Roboto',18),textvariable=usertext)
-entry.pack(pady=5)
-
-predictionOne=customtkinter.CTkButton(master=frame,textvariable=pOne,font=('Roboto',18),command=lambda:setEntry(predictVlaue=pOne.get()))
-predictionOne.pack(side='left',padx=(100,5))
-
-predictionTwo=customtkinter.CTkButton(master=frame,textvariable=pTwo,font=('Roboto',18),command=lambda:setEntry(predictVlaue=pTwo.get()))
-predictionTwo.pack(side='left',padx=(150,5))
-
-predictionThree=customtkinter.CTkButton(master=frame,textvariable=pThree,font=('Roboto',18),command=lambda:setEntry(predictVlaue=pThree.get()))
-predictionThree.pack(side='left',padx=(150,5))
-
-prevtext=''
 
 
 if __name__=="__main__": #main funkcija programa
+    
+    #formiranje GUI elemenata
+    frame=customtkinter.CTkFrame(master=root)
+    frame.pack(pady=20,padx=60,fill='both',expand=True)
+
+    label=customtkinter.CTkLabel(master=frame,text='Next Word Prediction',font=("Roboto",34))
+    label.pack(pady=50)
+
+    entry=customtkinter.CTkEntry(master=frame,placeholder_text="Start typing...",width=600,font=('Roboto',18),textvariable=usertext)
+    entry.pack(pady=5)
+
+    predictionOne=customtkinter.CTkButton(master=frame,textvariable=pOne,font=('Roboto',18),command=lambda:setEntry(predictVlaue=pOne.get()))
+    predictionOne.pack(side='left',padx=(100,5))
+
+    predictionTwo=customtkinter.CTkButton(master=frame,textvariable=pTwo,font=('Roboto',18),command=lambda:setEntry(predictVlaue=pTwo.get()))
+    predictionTwo.pack(side='left',padx=(150,5))
+
+    predictionThree=customtkinter.CTkButton(master=frame,textvariable=pThree,font=('Roboto',18),command=lambda:setEntry(predictVlaue=pThree.get()))
+    predictionThree.pack(side='left',padx=(150,5))
+
+    prevtext=''
+    
+    print("Loaded.")
     while(True):
         '''
         Ovaj dio koda predstavlja beskonačnu petlju koja kontinuirano osluškuje promijene 

@@ -1,15 +1,15 @@
 from transformers import T5ForConditionalGeneration, T5Tokenizer
-print("model loading")
+
 
 class PredictionModel():
     
     def __init__(self) -> None:
-        
+        print("model loading")
         global model_name,tokenizer,model    
         model_name = "model_one"   #ucitavanje modela
         tokenizer = T5Tokenizer.from_pretrained(model_name, legacy=False)       #ucitavanje tokenizera
         model = T5ForConditionalGeneration.from_pretrained(model_name)
-        
+        print("model loaded")
 
 
     def get_predictions(self,input_string, **generator_args):
@@ -37,4 +37,4 @@ class PredictionModel():
         
         return predictions
     
-    print("model loaded")
+   
